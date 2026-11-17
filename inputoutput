@@ -1,0 +1,105 @@
+
+import java.util.Scanner;
+
+public class controlflow {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        
+        System.out.println(" STUDENT INFORMATION ");
+
+        System.out.print("Enter Student Name: ");
+        String name = input.nextLine();
+
+        System.out.print("Enter ID Number: ");
+        String id = input.nextLine();
+
+        System.out.print("Enter Course: ");
+        String course = input.nextLine();
+
+        System.out.print("Enter School Year: ");
+        String schoolYear = input.nextLine();
+
+        
+        System.out.print("\nEnter Number of Subjects: ");
+        int totalSubjects = input.nextInt();
+        input.nextLine();
+
+        double totalGrades = 0;
+
+        // COURSES AND GRADES USING FOR LOOP
+        System.out.println("\n===== MY COURSES =====");
+
+        for (int i = 1; i <= totalSubjects; i++) {
+
+            System.out.print("Enter Subject " + i + ": ");
+            String subject = input.nextLine();
+
+            System.out.print("Enter Grade: ");
+            double grade = input.nextDouble();
+            input.nextLine();
+
+            totalGrades += grade;
+
+            System.out.println(subject + " - " + grade);
+        }
+
+        
+        double gwa = totalGrades / totalSubjects;
+
+        
+        String letterGrade;
+
+        if (gwa >= 98) {
+            letterGrade = "A";
+        } else if (gwa >= 95) {
+            letterGrade = "A-";
+        } else if (gwa >= 91) {
+            letterGrade = "B+";
+        } else if (gwa >= 88) {
+            letterGrade = "B";
+        } else if (gwa >= 85) {
+            letterGrade = "B-";
+        } else if (gwa >= 81) {
+            letterGrade = "C+";
+        } else if (gwa >= 78) {
+            letterGrade = "C";
+        } else if (gwa >= 75) {
+            letterGrade = "C-";
+        } else if (gwa >= 70) {
+            letterGrade = "D";
+        } else {
+            letterGrade = "F";
+        }
+
+        
+        System.out.println("\n===== STUDENT INFORMATION =====");
+        System.out.println("Student Name: " + name);
+        System.out.println("ID Number: " + id);
+        System.out.println("Course: " + course);
+        System.out.println("School Year: " + schoolYear);
+
+        System.out.println("\n===== GENERAL AVERAGE =====");
+        System.out.printf("General Weighted Average: %.2f%n", gwa);
+        System.out.println("Letter Grade: " + letterGrade);
+
+        
+        System.out.println("\n========== GRADING SCALE ==========");
+        System.out.printf("%-15s %-15s%n", "GRADE RANGE", "LETTER GRADE");
+        System.out.println("-----------------------------------");
+        System.out.printf("%-15s %-15s%n", "100 - 98", "A");
+        System.out.printf("%-15s %-15s%n", "97 - 95", "A-");
+        System.out.printf("%-15s %-15s%n", "94 - 91", "B+");
+        System.out.printf("%-15s %-15s%n", "90 - 88", "B");
+        System.out.printf("%-15s %-15s%n", "87 - 85", "B-");
+        System.out.printf("%-15s %-15s%n", "84 - 81", "C+");
+        System.out.printf("%-15s %-15s%n", "80 - 78", "C");
+        System.out.printf("%-15s %-15s%n", "77 - 75", "C-");
+        System.out.printf("%-15s %-15s%n", "74 - 70", "D");
+        System.out.printf("%-15s %-15s%n", "69 below", "F");
+        System.out.println("===================================");
+
+        input.close();
+    }
+}
