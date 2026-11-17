@@ -1,0 +1,147 @@
+
+public class controlflow {
+
+    // FUNCTION WITH PARAMETERS AND RETURN
+    public static double calculateGWA(double[] grades) {
+        double total = 0;
+
+        for (int i = 0; i < grades.length; i++) {
+
+            if (grades[i] < 0 || grades[i] > 100) {
+                break;
+            }
+
+            total += grades[i];
+        }
+
+        return total / grades.length;
+    }
+
+    // FUNCTION WITH PARAMETER AND RETURN
+    public static String getLetterGrade(double gwa) {
+
+        if (gwa >= 98) {
+            return "A";
+        } else if (gwa >= 95) {
+            return "A-";
+        } else if (gwa >= 91) {
+            return "B+";
+        } else if (gwa >= 88) {
+            return "B";
+        } else if (gwa >= 85) {
+            return "B-";
+        } else if (gwa >= 81) {
+            return "C+";
+        } else if (gwa >= 78) {
+            return "C";
+        } else if (gwa >= 75) {
+            return "C-";
+        } else if (gwa >= 70) {
+            return "D";
+        } else {
+            return "F";
+        }
+    }
+
+    // FUNCTION WITH PARAMETERS
+    public static void displayStudentInfo(String name,
+            String id, String course, String schoolYear) {
+
+        System.out.println("========== STUDENT INFORMATION ==========");
+        System.out.println("Student Name: " + name);
+        System.out.println("ID Number: " + id);
+        System.out.println("Course: " + course);
+        System.out.println("School Year: " + schoolYear);
+    }
+
+    // FUNCTION USING ARRAYS AND CONTINUE
+    public static void displaySubjects(String[] subjects,
+            double[] grades) {
+
+        System.out.println("\n========== MY COURSES ==========");
+
+        for (int i = 0; i < subjects.length; i++) {
+
+            // CONTINUE: Skip empty subject names
+            if (subjects[i].isEmpty()) {
+                continue;
+            }
+
+            System.out.println(subjects[i] + " - " + grades[i]);
+        }
+    }
+
+    // FUNCTION FOR GRADING SCALE
+    public static void displayGradingScale() {
+
+        String[] ranges = {
+            "100 - 98", "97 - 95", "94 - 91",
+            "90 - 88", "87 - 85", "84 - 81",
+            "80 - 78", "77 - 75", "74 - 70",
+            "69 below"
+        };
+
+        String[] letters = {
+            "A", "A-", "B+", "B", "B-",
+            "C+", "C", "C-", "D", "F"
+        };
+
+        System.out.println("\n========== GRADING SCALE ==========");
+        System.out.printf("%-15s %-15s%n",
+                "GRADE RANGE", "LETTER GRADE");
+        System.out.println("-----------------------------------");
+
+        for (int i = 0; i < ranges.length; i++) {
+            System.out.printf("%-15s %-15s%n",
+                    ranges[i], letters[i]);
+        }
+
+        System.out.println("===================================");
+    }
+
+    public static void main(String[] args) {
+
+        // STUDENT INFORMATION
+        String name = "Pio Nicolai Bacani";
+        String idNumber = "2026-7344";
+        String course = "BSIT";
+        String schoolYear = "2026-2027";
+
+        // ARRAYS IN JAVA
+        String[] subjects = {
+            "Colloquium",
+            "Work Education",
+            "Computer Programming 2",
+            "Arts Appreciation",
+            "Discrete Mathematics",
+            "CWTS 2",
+            "PATHFIT 2",
+            "Life and Teachings of Jesus",
+            "Living in the IT Era"
+        };
+
+        double[] grades = {
+            90, 88, 92, 85, 95, 90, 93, 89, 94
+        };
+
+        // CALLING FUNCTIONS WITH PARAMETERS
+        displayStudentInfo(name, idNumber, course, schoolYear);
+
+        displaySubjects(subjects, grades);
+
+        // CALCULATE GWA
+        double gwa = calculateGWA(grades);
+
+        // GET LETTER GRADE
+        String letterGrade = getLetterGrade(gwa);
+
+        // DISPLAY FINAL GRADE
+        System.out.println("\n========== FINAL GRADE ==========");
+        System.out.printf("General Weighted Average: %.2f%n", gwa);
+        System.out.println("Letter Grade: " + letterGrade);
+
+        // DISPLAY GRADING SCALE
+        displayGradingScale();
+
+    }
+}
