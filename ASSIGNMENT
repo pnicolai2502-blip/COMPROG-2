@@ -1,0 +1,136 @@
+1. Function and Parameter
+Definition:
+
+A function (also called a method in Java) is a block of code designed to perform a specific task. It helps organize a program, avoid repeating code, and make the program easier to understand.
+
+A parameter is a variable declared inside a method's parentheses. It receives a value that can be used inside the method.
+
+code 
+
+public class functionex {
+
+    // Function with a parameter
+    static void greet(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+
+    public static void main(String[] args) {
+
+        greet("Pio");
+        greet("Tristan");
+
+    }
+}
+
+2. Arrays in JAVA
+Definition:
+
+An array is a collection of elements of the same data type stored in a single variable. Each element has an index number, starting from 0.
+
+Arrays are useful when storing multiple values without creating separate variables for each one.
+
+code 
+
+public class arrayex {
+
+    public static void main(String[] args) {
+
+        // Declare and initialize an array
+        int[] grades = {90, 85, 88, 92, 95};
+
+        // Display array elements
+        for (int i = 0; i < grades.length; i++) {
+            System.out.println("Grade " + (i + 1) + ": " + grades[i]);
+        }
+
+    }
+}
+
+3. What are break(), continue(), and return()?
+These are Java control statements used to control the flow of program execution.
+A. break
+Definition:
+
+The break statement is used to immediately stop a loop or exit a switch statement, even if the condition is still true.
+
+
+code 
+
+
+public class breakex {
+
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 5; i++) {
+
+            if (i == 3) {
+                break;
+            }
+
+            System.out.println(i);
+        }
+
+    }
+}
+
+
+
+B. continue
+Definition:
+
+The continue statement skips the current iteration of a loop and proceeds to the next iteration.
+
+code
+
+
+public class ContinueExample {
+
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 5; i++) {
+
+            if (i == 3) {
+                continue;
+            }
+
+            System.out.println(i);
+        }
+
+    }
+}
+
+
+C. return
+Definition:
+
+The return statement is used to end the execution of a method. It can also send a value back to the method that called it.
+
+
+code 
+
+public class ReturnExample {
+
+    // Method that returns a value
+    static int addNumbers(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+
+        int result = addNumbers(10, 20);
+
+        System.out.println("The sum is: " + result);
+
+    }
+}
+
+
+BREAK = Stop the loop.
+
+
+
+CONTINUE = Skip and move on.
+
+
+
+RETURN = Exit the method and give back a result (if applicable).
